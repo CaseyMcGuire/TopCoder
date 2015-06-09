@@ -6,13 +6,13 @@ File.open("answers.txt", "r").each do |line|
   next if line == "/n" or line.empty? or line.length == 1
 
   #Get our tokens
-  cur_line = line.split(/\s+{\|\s{3,}{|}\s+/)
+  cur_line = line.split(/\s+{\|}\s{3,}{|}\s+/)
 
   #strip out Passed token and white space so we're hopefully only left with inputs and answers
   cur_line.map(&:strip!)
   cur_line.delete_if { |a| a.empty? or a == "Passed" }
 
-  #If my regex didn't catch anything, get rid of this input
+  #If my didn't break up the string correctly, just ignore it
   next if cur_line.length != 2
 
   #Get rid of leading bracket and quotation marks
