@@ -1,6 +1,7 @@
 
 class TurretDefense:
     
+    #RUNTIME: O(n) where n is the length of xs/ys/times
     def firstMiss(self, xs, ys, times):
         """
         Returns the first target that can't be shot down
